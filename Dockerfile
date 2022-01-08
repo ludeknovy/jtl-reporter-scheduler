@@ -4,7 +4,7 @@ WORKDIR /src
 
 COPY package.json package-lock.json  ./
 
-RUN npm install --only=prod
+RUN npm ci --only=prod
 
 COPY . ./
 
