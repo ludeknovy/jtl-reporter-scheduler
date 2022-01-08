@@ -10,7 +10,7 @@ const bree = new Bree({
     jobs: [
         {
             name: "test-run-housekeeping",
-            interval: "every 5 seconds",
+            interval: "every 6 hours",
         },
     ],
 })
