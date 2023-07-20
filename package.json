@@ -15,7 +15,7 @@
   "dependencies": {
     "@breejs/ts-worker": "^1.0.1",
     "bree": "^7.1.5",
-    "pg": "^8.7.1"
+    "pg": "^8.11.1"
   },
   "devDependencies": {
     "@types/node": "^16.11.7",
