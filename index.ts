@@ -12,6 +12,10 @@ const bree = new Bree({
             name: "test-run-housekeeping",
             interval: "every 6 hours",
         },
+        {
+            name: "stale-test run-housekeeping",
+            interval: "every 1 hour",
+        },
     ],
 })
 
