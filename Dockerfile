@@ -1,14 +1,25 @@
+FROM node:24.22-alpine AS builder
+
+WORKDIR /src
+
+COPY package.json package-lock.json ./
+
+RUN npm ci
+
+COPY . ./
+
+RUN npm run build
+
 FROM node:24.22-alpine
 
 WORKDIR /src
 
-COPY package.json package-lock.json  ./
+ENV NODE_ENV=production
 
-RUN npm ci --only=prod
+COPY package.json package-lock.json ./
 
-COPY . ./
+RUN npm ci --omit=dev && npm cache clean --force
 
-
-RUN npm run build
+COPY --from=builder /src/dist ./dist
 
 CMD [ "npm", "run", "start" ]
